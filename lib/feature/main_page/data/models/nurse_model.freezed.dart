@@ -22,9 +22,11 @@ NurseModel _$NurseModelFromJson(Map<String, dynamic> json) {
 mixin _$NurseModel {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_online')
   bool get isOnline => throw _privateConstructorUsedError;
   List<String> get tasks => throw _privateConstructorUsedError;
-  int get maxTasks => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max_task')
+  int get maxTask => throw _privateConstructorUsedError;
 
   /// Serializes this NurseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +45,11 @@ abstract class $NurseModelCopyWith<$Res> {
       _$NurseModelCopyWithImpl<$Res, NurseModel>;
   @useResult
   $Res call(
-      {int id, String name, bool isOnline, List<String> tasks, int maxTasks});
+      {int id,
+      String name,
+      @JsonKey(name: 'is_online') bool isOnline,
+      List<String> tasks,
+      @JsonKey(name: 'max_task') int maxTask});
 }
 
 /// @nodoc
@@ -65,7 +71,7 @@ class _$NurseModelCopyWithImpl<$Res, $Val extends NurseModel>
     Object? name = null,
     Object? isOnline = null,
     Object? tasks = null,
-    Object? maxTasks = null,
+    Object? maxTask = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -84,9 +90,9 @@ class _$NurseModelCopyWithImpl<$Res, $Val extends NurseModel>
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      maxTasks: null == maxTasks
-          ? _value.maxTasks
-          : maxTasks // ignore: cast_nullable_to_non_nullable
+      maxTask: null == maxTask
+          ? _value.maxTask
+          : maxTask // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -101,7 +107,11 @@ abstract class _$$NurseModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id, String name, bool isOnline, List<String> tasks, int maxTasks});
+      {int id,
+      String name,
+      @JsonKey(name: 'is_online') bool isOnline,
+      List<String> tasks,
+      @JsonKey(name: 'max_task') int maxTask});
 }
 
 /// @nodoc
@@ -121,7 +131,7 @@ class __$$NurseModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? isOnline = null,
     Object? tasks = null,
-    Object? maxTasks = null,
+    Object? maxTask = null,
   }) {
     return _then(_$NurseModelImpl(
       id: null == id
@@ -140,9 +150,9 @@ class __$$NurseModelImplCopyWithImpl<$Res>
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      maxTasks: null == maxTasks
-          ? _value.maxTasks
-          : maxTasks // ignore: cast_nullable_to_non_nullable
+      maxTask: null == maxTask
+          ? _value.maxTask
+          : maxTask // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -154,9 +164,9 @@ class _$NurseModelImpl implements _NurseModel {
   const _$NurseModelImpl(
       {required this.id,
       required this.name,
-      required this.isOnline,
+      @JsonKey(name: 'is_online') required this.isOnline,
       required final List<String> tasks,
-      required this.maxTasks})
+      @JsonKey(name: 'max_task') required this.maxTask})
       : _tasks = tasks;
 
   factory _$NurseModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -167,6 +177,7 @@ class _$NurseModelImpl implements _NurseModel {
   @override
   final String name;
   @override
+  @JsonKey(name: 'is_online')
   final bool isOnline;
   final List<String> _tasks;
   @override
@@ -177,11 +188,12 @@ class _$NurseModelImpl implements _NurseModel {
   }
 
   @override
-  final int maxTasks;
+  @JsonKey(name: 'max_task')
+  final int maxTask;
 
   @override
   String toString() {
-    return 'NurseModel(id: $id, name: $name, isOnline: $isOnline, tasks: $tasks, maxTasks: $maxTasks)';
+    return 'NurseModel(id: $id, name: $name, isOnline: $isOnline, tasks: $tasks, maxTask: $maxTask)';
   }
 
   @override
@@ -194,14 +206,13 @@ class _$NurseModelImpl implements _NurseModel {
             (identical(other.isOnline, isOnline) ||
                 other.isOnline == isOnline) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            (identical(other.maxTasks, maxTasks) ||
-                other.maxTasks == maxTasks));
+            (identical(other.maxTask, maxTask) || other.maxTask == maxTask));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, isOnline,
-      const DeepCollectionEquality().hash(_tasks), maxTasks);
+      const DeepCollectionEquality().hash(_tasks), maxTask);
 
   /// Create a copy of NurseModel
   /// with the given fields replaced by the non-null parameter values.
@@ -221,11 +232,12 @@ class _$NurseModelImpl implements _NurseModel {
 
 abstract class _NurseModel implements NurseModel {
   const factory _NurseModel(
-      {required final int id,
-      required final String name,
-      required final bool isOnline,
-      required final List<String> tasks,
-      required final int maxTasks}) = _$NurseModelImpl;
+          {required final int id,
+          required final String name,
+          @JsonKey(name: 'is_online') required final bool isOnline,
+          required final List<String> tasks,
+          @JsonKey(name: 'max_task') required final int maxTask}) =
+      _$NurseModelImpl;
 
   factory _NurseModel.fromJson(Map<String, dynamic> json) =
       _$NurseModelImpl.fromJson;
@@ -235,11 +247,13 @@ abstract class _NurseModel implements NurseModel {
   @override
   String get name;
   @override
+  @JsonKey(name: 'is_online')
   bool get isOnline;
   @override
   List<String> get tasks;
   @override
-  int get maxTasks;
+  @JsonKey(name: 'max_task')
+  int get maxTask;
 
   /// Create a copy of NurseModel
   /// with the given fields replaced by the non-null parameter values.

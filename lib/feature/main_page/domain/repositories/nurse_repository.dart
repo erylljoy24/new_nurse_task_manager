@@ -1,5 +1,5 @@
-import '../entities/nurse.dart';
+import '../entities/nurse_entity.dart';
 
 abstract class NurseRepository {
-  Future<List<Nurse>> getNurses();
+  Future<List<NurseEntity>> getNurses();
 }

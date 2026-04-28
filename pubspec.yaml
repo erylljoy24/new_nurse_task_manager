@@ -39,8 +39,9 @@ dependencies:
   drift: ^2.26.0
   flutter_bloc: ^9.1.0
   get_it: ^8.0.3
-  freezed: ^2.2.0
+  freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -51,9 +52,10 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   drift_dev: ^2.26.0
   build_runner: ^2.4.15
+  freezed: ^2.4.5
   injectable_generator: ^2.4.1
   json_serializable: ^6.9.5
 

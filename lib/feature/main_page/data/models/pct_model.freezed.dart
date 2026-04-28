@@ -22,9 +22,11 @@ PctModel _$PctModelFromJson(Map<String, dynamic> json) {
 mixin _$PctModel {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_online')
   bool get isOnline => throw _privateConstructorUsedError;
   List<String> get tasks => throw _privateConstructorUsedError;
-  int get maxTasks => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max_task')
+  int get maxTask => throw _privateConstructorUsedError;
 
   /// Serializes this PctModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,7 +44,11 @@ abstract class $PctModelCopyWith<$Res> {
       _$PctModelCopyWithImpl<$Res, PctModel>;
   @useResult
   $Res call(
-      {int id, String name, bool isOnline, List<String> tasks, int maxTasks});
+      {int id,
+      String name,
+      @JsonKey(name: 'is_online') bool isOnline,
+      List<String> tasks,
+      @JsonKey(name: 'max_task') int maxTask});
 }
 
 /// @nodoc
@@ -64,7 +70,7 @@ class _$PctModelCopyWithImpl<$Res, $Val extends PctModel>
     Object? name = null,
     Object? isOnline = null,
     Object? tasks = null,
-    Object? maxTasks = null,
+    Object? maxTask = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,9 +89,9 @@ class _$PctModelCopyWithImpl<$Res, $Val extends PctModel>
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      maxTasks: null == maxTasks
-          ? _value.maxTasks
-          : maxTasks // ignore: cast_nullable_to_non_nullable
+      maxTask: null == maxTask
+          ? _value.maxTask
+          : maxTask // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -100,7 +106,11 @@ abstract class _$$PctModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id, String name, bool isOnline, List<String> tasks, int maxTasks});
+      {int id,
+      String name,
+      @JsonKey(name: 'is_online') bool isOnline,
+      List<String> tasks,
+      @JsonKey(name: 'max_task') int maxTask});
 }
 
 /// @nodoc
@@ -120,7 +130,7 @@ class __$$PctModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? isOnline = null,
     Object? tasks = null,
-    Object? maxTasks = null,
+    Object? maxTask = null,
   }) {
     return _then(_$PctModelImpl(
       id: null == id
@@ -139,9 +149,9 @@ class __$$PctModelImplCopyWithImpl<$Res>
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      maxTasks: null == maxTasks
-          ? _value.maxTasks
-          : maxTasks // ignore: cast_nullable_to_non_nullable
+      maxTask: null == maxTask
+          ? _value.maxTask
+          : maxTask // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -153,9 +163,9 @@ class _$PctModelImpl implements _PctModel {
   const _$PctModelImpl(
       {required this.id,
       required this.name,
-      required this.isOnline,
+      @JsonKey(name: 'is_online') required this.isOnline,
       required final List<String> tasks,
-      required this.maxTasks})
+      @JsonKey(name: 'max_task') required this.maxTask})
       : _tasks = tasks;
 
   factory _$PctModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -166,6 +176,7 @@ class _$PctModelImpl implements _PctModel {
   @override
   final String name;
   @override
+  @JsonKey(name: 'is_online')
   final bool isOnline;
   final List<String> _tasks;
   @override
@@ -176,11 +187,12 @@ class _$PctModelImpl implements _PctModel {
   }
 
   @override
-  final int maxTasks;
+  @JsonKey(name: 'max_task')
+  final int maxTask;
 
   @override
   String toString() {
-    return 'PctModel(id: $id, name: $name, isOnline: $isOnline, tasks: $tasks, maxTasks: $maxTasks)';
+    return 'PctModel(id: $id, name: $name, isOnline: $isOnline, tasks: $tasks, maxTask: $maxTask)';
   }
 
   @override
@@ -193,14 +205,13 @@ class _$PctModelImpl implements _PctModel {
             (identical(other.isOnline, isOnline) ||
                 other.isOnline == isOnline) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            (identical(other.maxTasks, maxTasks) ||
-                other.maxTasks == maxTasks));
+            (identical(other.maxTask, maxTask) || other.maxTask == maxTask));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, isOnline,
-      const DeepCollectionEquality().hash(_tasks), maxTasks);
+      const DeepCollectionEquality().hash(_tasks), maxTask);
 
   /// Create a copy of PctModel
   /// with the given fields replaced by the non-null parameter values.
@@ -222,9 +233,9 @@ abstract class _PctModel implements PctModel {
   const factory _PctModel(
       {required final int id,
       required final String name,
-      required final bool isOnline,
+      @JsonKey(name: 'is_online') required final bool isOnline,
       required final List<String> tasks,
-      required final int maxTasks}) = _$PctModelImpl;
+      @JsonKey(name: 'max_task') required final int maxTask}) = _$PctModelImpl;
 
   factory _PctModel.fromJson(Map<String, dynamic> json) =
       _$PctModelImpl.fromJson;
@@ -234,11 +245,13 @@ abstract class _PctModel implements PctModel {
   @override
   String get name;
   @override
+  @JsonKey(name: 'is_online')
   bool get isOnline;
   @override
   List<String> get tasks;
   @override
-  int get maxTasks;
+  @JsonKey(name: 'max_task')
+  int get maxTask;
 
   /// Create a copy of PctModel
   /// with the given fields replaced by the non-null parameter values.

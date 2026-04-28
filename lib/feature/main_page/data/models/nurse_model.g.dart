@@ -10,16 +10,16 @@ _$NurseModelImpl _$$NurseModelImplFromJson(Map<String, dynamic> json) =>
     _$NurseModelImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      isOnline: json['isOnline'] as bool,
+      isOnline: json['is_online'] as bool,
       tasks: (json['tasks'] as List<dynamic>).map((e) => e as String).toList(),
-      maxTasks: (json['maxTasks'] as num).toInt(),
+      maxTask: (json['max_task'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$NurseModelImplToJson(_$NurseModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'isOnline': instance.isOnline,
+      'is_online': instance.isOnline,
       'tasks': instance.tasks,
-      'maxTasks': instance.maxTasks,
+      'max_task': instance.maxTask,
     };

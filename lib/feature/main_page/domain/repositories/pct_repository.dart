@@ -1,5 +1,5 @@
-import '../entities/pct.dart';
+import '../entities/pct_entity.dart';
 
-abstract class PctRepositor {
-  Future<List<Pct>> getPct();
+abstract class PctRepository {
+  Future<List<PctEntity>> getPct();
 }

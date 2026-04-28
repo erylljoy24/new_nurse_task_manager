@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../entities/nurse.dart';
+import '../entities/nurse_entity.dart';
 import '../repositories/nurse_repository.dart';
 
 @injectable
@@ -9,7 +9,7 @@ class GetNurse {
 
   GetNurse(this.nurseRepository);
 
-  Future<List<Nurse>> call() {
+  Future<List<NurseEntity>> call() {
     return nurseRepository.getNurses();
   }
 }
